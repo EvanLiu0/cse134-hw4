@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/favicon-final.webp" />
+    <title>Custom Dialogues</title>
+  </head>
+  <body>
+    <script
+      type="text/javascript"
+      src="./node_modules/dompurify/dist/purify.js"
+    ></script>
+    <script type="module">
+      import {
+        initialize,
+        showAlertDialog,
+        showConfirmDialog,
+        showPromptDialog,
+      } from "./customdialog.js";
+
+      window.addEventListener("DOMContentLoaded", initialize);
+    </script>
+
+    <h1>Custom Dialogues</h1>
+    <button id="alert-btn">Alert</button>
+    <button id="confirm-btn">Confirm</button>
+    <button id="prompt-btn">Prompt</button>
+    <br />
+    <br />
+    <output id="main-output"></output>
+  </body>
+</html>

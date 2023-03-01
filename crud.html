@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/favicon-final.webp" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <script type="module">
+      import {
+        initialize,
+        renderExisting,
+        isNew,
+        setSeen,
+        editBlog,
+        deleteBlog,
+      } from "./blog.js";
+
+      if (isNew()) {
+        alert("New");
+        setSeen();
+        initialize();
+      } else {
+        alert("Not New");
+        renderExisting();
+      }
+    </script>
+    <h1>CRUD</h1>
+    <ul id="list-container"></ul>
+  </body>
+</html>
