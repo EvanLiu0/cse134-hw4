@@ -8,6 +8,16 @@ function createLIFromString(htmlstring) {
   return newLI;
 }
 
+function taggedBlog(strings, name, date, summary) {
+  if (name != "") {
+    return `${name} (${date}) - ${summary} 
+    <button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button>`;
+  } else {
+    return `(${date}) - ${summary} 
+        <button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button>`;
+  }
+}
+
 export function showEditDialog(args) {
   let el = document.createElement("dialog");
   el.setAttribute("autofocus", "");
@@ -50,6 +60,22 @@ export function showEditDialog(args) {
   el.appendChild(document.createElement("br"));
   el.appendChild(document.createElement("br"));
 
+  let tempLI = createLIFromString(args);
+
+  titleInput.value = tempLI.childNodes[0].textContent
+    .substring(0, tempLI.childNodes[0].textContent.indexOf("("))
+    .trim();
+  dateInput.value = tempLI.childNodes[0].textContent
+    .substring(
+      tempLI.childNodes[0].textContent.indexOf("(") + 1,
+      tempLI.childNodes[0].textContent.indexOf(")")
+    )
+    .trim();
+
+  summaryInput.value = tempLI.childNodes[0].textContent
+    .substring(tempLI.childNodes[0].textContent.indexOf("-") + 2)
+    .trim();
+
   let cancel = document.createElement("button");
   cancel.innerText = "Cancel";
   cancel.setAttribute("id", "close-btn");
@@ -63,13 +89,12 @@ export function showEditDialog(args) {
   accept.innerText = "Ok";
   accept.setAttribute("id", "accept-btn");
   accept.onclick = () => {
-    let ind = dbFind(args);
-    let tempLI = createLIFromString(args);
-    tempLI.childNodes[0].textContent =
-      document.getElementById("titleInput").value;
-    alert(db);
+    tempLI.innerHTML = taggedBlog`${
+      document.getElementById("titleInput").value
+    }${document.getElementById("dateInput").value})${
+      document.getElementById("summaryInput").value
+    }`;
     db[dbFind(args)] = tempLI.innerHTML;
-    alert(db);
     document.getElementsByTagName("dialog")[0].close();
     document.body.removeChild(document.body.lastChild);
     notifyDBChanged();

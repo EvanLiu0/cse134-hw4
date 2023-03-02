@@ -4,6 +4,7 @@ export var db = [];
 var firstLoad = localStorage.getItem("firstLoad");
 
 export function isNew() {
+  alert(firstLoad);
   return firstLoad == null;
 }
 
@@ -60,12 +61,18 @@ export function dbFind(query) {
 
 export function renderExisting() {
   db = JSON.parse(localStorage.getItem("db"));
-  for (let i = 0; i < db.length; i++) {
-    document
-      .getElementById("list-container")
-      .appendChild(createLIFromString(db[i]));
+  if (db) {
+    for (let i = 0; i < db.length; i++) {
+      document
+        .getElementById("list-container")
+        .appendChild(createLIFromString(db[i]));
+    }
+
+    coupleOnClicks();
+  } else {
+    db = [];
+    initialize();
   }
-  coupleOnClicks();
 }
 
 export function initialize() {
@@ -91,7 +98,7 @@ export function initialize() {
   let p3Title = "Neon Law Foundation: Cyberlaw at it's Most Human";
   let p3Date = "July 15, 2022";
   let p3Summary =
-    "Testimonials from Las Vegas' most driven proponents of cybersecurity and digital awareness";
+    "Testimonials from Las Vegas' most driven proponents of cybersecurity and digital awareness.";
   p3.innerHTML = taggedBlog`${p3Title}${p3Date}${p3Summary}`;
 
   db.push(p3.innerHTML);
