@@ -90,6 +90,45 @@ export function showAddDialog(args) {
   el.showModal();
 }
 
+export function showDeleteDialog(args) {
+  let el = document.createElement("dialog");
+  el.setAttribute("autofocus", "");
+  el.setAttribute("style", "text-align: center;");
+
+  let dialogHead = document.createElement("h2");
+  dialogHead.innerText = "Delete Post";
+  el.appendChild(dialogHead);
+
+  el.appendChild(document.createElement("br"));
+  el.appendChild(document.createElement("br"));
+
+  let cancel = document.createElement("button");
+  cancel.innerText = "Cancel";
+  cancel.setAttribute("id", "close-btn");
+  cancel.onclick = () => {
+    document.getElementsByTagName("dialog")[0].close();
+    document.body.removeChild(document.body.lastChild);
+  };
+  el.appendChild(cancel);
+
+  let accept = document.createElement("button");
+  accept.innerText = "Save";
+  accept.setAttribute("id", "accept-btn");
+  accept.onclick = () => {
+    if (dbFind(args) > -1) {
+      db.splice(dbFind(args), 1);
+    }
+
+    document.getElementsByTagName("dialog")[0].close();
+    document.body.removeChild(document.body.lastChild);
+    notifyDBChanged();
+  };
+
+  el.appendChild(accept);
+  document.body.appendChild(el);
+  el.showModal();
+}
+
 export function showEditDialog(args) {
   let el = document.createElement("dialog");
   el.setAttribute("autofocus", "");
@@ -176,25 +215,4 @@ export function showEditDialog(args) {
   document.body.appendChild(el);
 
   el.showModal();
-}
-
-export function showDeleteDialog(args) {
-  let el = document.createElement("dialog");
-  el.setAttribute("autofocus", "");
-  el.setAttribute("style", "text-align: center;");
-
-  let accept = document.createElement("button");
-  accept.innerText = "Ok";
-  accept.setAttribute("id", "close-btn");
-  el.appendChild(accept);
-
-  document.body.appendChild(el);
-
-  document.getElementById("close-btn").addEventListener("click", () => {
-    document.getElementsByTagName("dialog")[0].close();
-    document.body.removeChild(document.body.lastChild);
-  });
-
-  el.showModal();
-  notifyDBChanged();
 }
