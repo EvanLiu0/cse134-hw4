@@ -1,4 +1,9 @@
-import { showDeleteDialog, showEditDialog } from "./cruddialogs.js";
+import "./node_modules/dompurify/dist/purify.js";
+import {
+  showDeleteDialog,
+  showEditDialog,
+  showAddDialog,
+} from "./cruddialogs.js";
 
 export var db = [];
 var firstLoad = localStorage.getItem("firstLoad");
@@ -22,7 +27,7 @@ export function notifyDBChanged() {
 
 function createLIFromString(htmlstring) {
   let newLI = document.createElement("li");
-  newLI.innerHTML = htmlstring.trim();
+  newLI.innerHTML = htmlstring;
 
   return newLI;
 }
@@ -42,6 +47,8 @@ function coupleOnClicks() {
   for (let i = 0; i < editButtons.length; i++) {
     deleteButtons[i].addEventListener("click", deleteBlog);
   }
+
+  document.getElementById("add-btn").addEventListener("click", showAddDialog);
 }
 
 export function editBlog() {
@@ -65,7 +72,7 @@ export function renderExisting() {
     for (let i = 0; i < db.length; i++) {
       document
         .getElementById("list-container")
-        .appendChild(createLIFromString(db[i]));
+        .appendChild(createLIFromString(DOMPurify.sanitize(db[i])));
     }
 
     coupleOnClicks();
