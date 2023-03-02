@@ -1,5 +1,3 @@
-import "./node_modules/dompurify/dist/purify.js";
-
 function taggedPrompt(strings, input) {
   return DOMPurify.sanitize(`${strings[0]}${input}`);
   //   return `${strings[0]}${input}`;

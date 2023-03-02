@@ -1,4 +1,4 @@
-import "./node_modules/dompurify/dist/purify.js";
+// import "./node_modules/dompurify/dist/purify.js";
 import { db, dbFind, notifyDBChanged } from "./blog.js";
 
 function createLIFromString(htmlstring) {
