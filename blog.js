@@ -67,12 +67,23 @@ export function dbFind(query) {
 }
 
 export function renderExisting() {
+  if (document.getElementById("empty-message")) {
+    document.getElementById("empty-message").remove();
+  }
+
   db = JSON.parse(localStorage.getItem("db"));
   if (db) {
-    for (let i = 0; i < db.length; i++) {
-      document
-        .getElementById("list-container")
-        .appendChild(createLIFromString(DOMPurify.sanitize(db[i])));
+    if (db.length == 0) {
+      let emptyMessage = document.createElement("p");
+      emptyMessage.setAttribute("id", "empty-message");
+      emptyMessage.innerText = "No blog posts currently listed\n";
+      document.getElementById("add-btn").before(emptyMessage);
+    } else {
+      for (let i = 0; i < db.length; i++) {
+        document
+          .getElementById("list-container")
+          .appendChild(createLIFromString(DOMPurify.sanitize(db[i])));
+      }
     }
 
     coupleOnClicks();
