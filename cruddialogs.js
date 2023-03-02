@@ -112,7 +112,7 @@ export function showDeleteDialog(args) {
   el.appendChild(cancel);
 
   let accept = document.createElement("button");
-  accept.innerText = "Save";
+  accept.innerText = "Ok";
   accept.setAttribute("id", "accept-btn");
   accept.onclick = () => {
     if (dbFind(args) > -1) {

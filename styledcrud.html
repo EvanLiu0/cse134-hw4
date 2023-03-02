@@ -5,27 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/images/favicon-final.webp" />
-    <title>Custom Dialogues</title>
+    <link rel="stylesheet" href="./styledcrud.css" />
+    <title>Styled CRUD</title>
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.js"></script>
     <script type="module">
       import {
         initialize,
-        showAlertDialog,
-        showConfirmDialog,
-        showPromptDialog,
-      } from "./customdialog.js";
+        renderExisting,
+        isNew,
+        setSeen,
+        editBlog,
+        deleteBlog,
+      } from "./blog.js";
 
-      window.addEventListener("DOMContentLoaded", initialize);
+      if (isNew()) {
+        setSeen();
+        initialize();
+      } else {
+        renderExisting();
+      }
     </script>
-
-    <h1>Custom Dialogues</h1>
-    <button id="alert-btn">Alert</button>
-    <button id="confirm-btn">Confirm</button>
-    <button id="prompt-btn">Prompt</button>
-    <br />
-    <br />
-    <output id="main-output"></output>
+    <h1>Styled CRUD</h1>
+    <ul id="list-container"></ul>
+    <button id="add-btn">Add New Blog</button>
   </body>
 </html>

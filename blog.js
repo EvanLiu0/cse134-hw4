@@ -9,7 +9,6 @@ export var db = [];
 var firstLoad = localStorage.getItem("firstLoad");
 
 export function isNew() {
-  alert(firstLoad);
   return firstLoad == null;
 }
 

@@ -8,6 +8,7 @@
     <title>CRUD</title>
   </head>
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.js"></script>
     <script type="module">
       import {
         initialize,
@@ -19,11 +20,9 @@
       } from "./blog.js";
 
       if (isNew()) {
-        alert("New");
         setSeen();
         initialize();
       } else {
-        alert("Not New");
         renderExisting();
       }
     </script>

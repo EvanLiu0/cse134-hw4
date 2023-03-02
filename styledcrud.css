@@ -1,0 +1,11 @@
+li {
+  border: 2px solid red;
+  margin: 3px;
+  padding: 3px;
+}
+
+ul {
+  border: 2px solid orange;
+  max-width: 100ch;
+  padding: 2ch 5ch;
+}
