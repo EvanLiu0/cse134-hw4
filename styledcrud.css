@@ -1,11 +1,70 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
 li {
-  border: 2px solid red;
-  margin: 3px;
-  padding: 3px;
+  margin: 10ch 10ch 10ch 10ch;
+  padding: 2ch;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 4ch;
+  border: 2px dashed rgb(255, 102, 0);
+  background-color: rgb(255, 215, 141);
+  border-radius: 2ch;
 }
 
 ul {
-  border: 2px solid orange;
-  max-width: 100ch;
-  padding: 2ch 5ch;
+  max-width: 90ch;
+  list-style: none;
+  text-align: center;
+  background-color: white;
+  max-height: 60ch;
+  overflow: scroll;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 2ch;
+}
+
+#add-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
+  cursor: pointer;
+}
+
+.edit-btn {
+  font-style: normal;
+  margin-right: 2ch;
+}
+
+.delete-btn {
+  margin-left: 2ch;
+  font-style: normal;
+}
+
+#add-btn {
+  max-width: 13ch;
+  margin: 2ch 0;
+}
+
+hr {
+  width: 50%;
+  margin-bottom: 6ch;
+}
+
+dialog {
+  background-color: rgb(255, 255, 171);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+dialog > button {
+  background-color: rgb(255, 239, 138);
+  margin: 2ch 2ch;
+}
+
+h2 {
+  margin: 3ch;
 }

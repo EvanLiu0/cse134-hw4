@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M169WZK349"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-M169WZK349");
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +32,7 @@
         setSeen,
         editBlog,
         deleteBlog,
-      } from "./blog.js";
+      } from "./styledblog.js";
 
       if (isNew()) {
         setSeen();
@@ -28,7 +42,8 @@
       }
     </script>
     <h1>Styled CRUD</h1>
-    <ul id="list-container"></ul>
     <button id="add-btn">Add New Blog</button>
+    <hr />
+    <ul id="list-container"></ul>
   </body>
 </html>
