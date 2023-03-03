@@ -8,7 +8,7 @@ Website Changes:
 
     4. Added lightening hover effect on cells in skills menu table ("/about.html") to increase mouse tracking intuitiveness.
 
-    5. Created new form submission dialog for contact form ("./contact") giving users the ability to submit multiple consecutive questions or return to the home page.
+    5. Created new custom form submission dialog for contact form ("./contact") giving users the ability to submit multiple consecutive questions or return to the home page. Created "./contact.js" module to facilitate dialog display.
 
     6. Decoupled standard submit functionality on contact form ("./contact"), no longer refreshing page or sending data on submit.
 
