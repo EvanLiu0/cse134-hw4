@@ -234,3 +234,23 @@ form {
 .active {
   color: var(--secondary-text-color) !important;
 }
+
+dialog {
+  text-align: center;
+  position: absolute;
+  top: 50vh;
+  left: 30vw;
+  margin-top: -50px;
+  margin-left: -50px;
+  padding: 5ch 1ch 1ch 1ch;
+  background-color: var(--secondary-text-color);
+}
+
+dialog button {
+  border: 1.5px solid black;
+  margin: 2ch 2ch;
+}
+
+dialog button:hover {
+  background-color: rgb(255, 255, 223);
+}

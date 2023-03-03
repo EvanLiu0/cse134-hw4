@@ -287,7 +287,7 @@ table {
   text-align: center;
   border-spacing: 2rem;
   border-collapse: collapse;
-  border: 2px solid var(--secondary-text-color);
+  border: 2px solid var(--primary-text-color);
 }
 
 table th {
@@ -298,7 +298,7 @@ table th {
 
 th,
 td {
-  border: 3px solid var(--secondary-text-color);
+  border: 1px solid var(--primary-text-color);
   padding: 0.1rem;
 }
 
@@ -352,4 +352,27 @@ picture img {
 
 nav + section {
   overflow: scroll;
+}
+
+table tr:nth-child(even) {
+  background-color: #b3b3b3;
+  color: var(--primary-text-color);
+}
+
+table tr:nth-child(odd) {
+  background-color: #cfcfcf;
+  color: var(--primary-text-color);
+}
+
+table tr:first-child,
+table tr:first-child:hover {
+  background-color: var(--secondary-text-color);
+}
+
+table tr:hover {
+  background-color: white;
+}
+
+details summary {
+  font-weight: bold;
 }

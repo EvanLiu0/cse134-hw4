@@ -4,7 +4,23 @@ Website Changes:
 
     2. Addressed overflow issues present in about me menus ("/about.html"), detached vertical scrolling of text content from left-hand navigation bar. Now the right-hand text can be scrolled up and down without affecting the navigation bar position.
 
-    3.
+    3. Shaded-in cells and darkened text of table in skills menu of about me page ("/about.html").
+
+    4. Added lightening hover effect on cells in skills menu table ("/about.html") to increase mouse tracking intuitiveness.
+
+    5. Created new form submission dialog for contact form ("./contact") giving users the ability to submit multiple consecutive questions or return to the home page.
+
+    6. Decoupled standard submit functionality on contact form ("./contact"), no longer refreshing page or sending data on submit.
+
+    7. Added href.location navigate functionality to home page ("./index") projects button.
+
+    8. Fixed Chrome styling oversights (All Pages). When constructing the original site for the previous homeworks, I never tested the style on a Chrome browser. Notable changes include correctly adding visited link colors and link-disappearing behavior on hover, correct backup font loading, and page layout responsiveness.
+
+    9. Added typewriter animation for all non-index html page titles for increased interactivity.
+
+    10. Converted each of the three figures on the past projects page ("./projects.html") into clickable elements using element-wide onclick functions. In previous homeworks, only the text anchors in each figure could be clicked.
+
+    11. Fixed an error where clicking on the website title in the upper-left corner would generate a 404 when attempting to navigate from an individual project page ("./projects/scraper.html", "./projects/wtracker.html", "./projects/zooseeker.html").
 
 Third-Party Scripting:
 

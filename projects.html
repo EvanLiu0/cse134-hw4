@@ -24,6 +24,27 @@
     <link rel="stylesheet" href="./assets/styles/projects.css" />
   </head>
   <body>
+    <script>
+      window.onload = () => {
+        var i = 0;
+        var txt = "Projects"; /* The text */
+        var speed = 75; /* The speed/duration of the effect in milliseconds */
+
+        typeWriter();
+
+        function typeWriter() {
+          if (i < txt.length) {
+            if (i == 0) {
+              document.getElementById("main-title").innerHTML = txt.charAt(i);
+            } else {
+              document.getElementById("main-title").innerHTML += txt.charAt(i);
+            }
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+      };
+    </script>
     <header class="nav-container">
       <h1 class="title">
         <a href="./index.html">Evan Liu's Portfolio</a>
@@ -39,9 +60,9 @@
       </nav>
     </header>
     <main>
-      <h2>Projects</h2>
+      <h2 id="main-title">_</h2>
       <div id="image-container">
-        <figure>
+        <figure onclick="location.href='./projects/scraper.html';">
           <!-- Image Credit: https://www.google.com/search?q=web+scraping+blue&client=firefox-b-1-d&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj5tZ62nZv9AhXNIUQIHVVJChEQ_AUoAXoECAIQAw&biw=1067&bih=790&dpr=2#imgrc=gsd0AlIN1EhxgM -->
           <img
             src="./assets/images/webscraping.webp"
@@ -59,7 +80,7 @@
             </p>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="location.href='./projects/wtracker.html';">
           <!-- Image Credit: https://www.society19.com/free-things-to-do-around-uc-san-diego/ -->
           <img src="./assets/images/gym.webp" alt="Gym Floor" />
           <figcaption>
@@ -74,7 +95,7 @@
             </p>
           </figcaption>
         </figure>
-        <figure>
+        <figure onclick="location.href='./projects/zooseeker.html';">
           <!-- Image Credit: https://zoo.sandiegozoo.org/plan-your-visit -->
           <img src="./assets/images/zoo.webp" alt="Zoo Entrance" />
           <figcaption>

@@ -10,9 +10,30 @@
     <title>Evan Liu's Portfolio</title>
   </head>
   <body>
+    <script>
+      window.onload = () => {
+        var i = 0;
+        var txt = "Workout Tracker Web Application"; /* The text */
+        var speed = 75; /* The speed/duration of the effect in milliseconds */
+
+        typeWriter();
+
+        function typeWriter() {
+          if (i < txt.length) {
+            if (i == 0) {
+              document.getElementById("main-title").innerHTML = txt.charAt(i);
+            } else {
+              document.getElementById("main-title").innerHTML += txt.charAt(i);
+            }
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+      };
+    </script>
     <header class="nav-container">
       <h1 class="title">
-        <a href="./index.html">Evan Liu's Portfolio</a>
+        <a href="../index.html">Evan Liu's Portfolio</a>
       </h1>
       <nav>
         <!-- <picture
@@ -25,7 +46,7 @@
       </nav>
     </header>
     <main>
-      <h2>Workout Tracker App</h2>
+      <h2 id="main-title">_</h2>
       <aside>
         <p>
           <i>

@@ -30,6 +30,27 @@
   </head>
   <body>
     <script>
+      window.onload = () => {
+        var i = 0;
+        var txt = "About Me"; /* The text */
+        var speed = 75; /* The speed/duration of the effect in milliseconds */
+
+        typeWriter();
+
+        function typeWriter() {
+          if (i < txt.length) {
+            if (i == 0) {
+              document.getElementById("main-title").innerHTML = txt.charAt(i);
+            } else {
+              document.getElementById("main-title").innerHTML += txt.charAt(i);
+            }
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+      };
+    </script>
+    <script>
       function openAbout(aboutName) {
         var i;
         var x = document.getElementsByClassName("about-container");
@@ -54,12 +75,12 @@
       </nav>
     </header>
     <main>
-      <h2>About Me</h2>
+      <h2 id="main-title">_</h2>
       <div class="about-container" id="bio-container">
         <nav id="container-nav">
           <a class="active" onclick="openAbout('bio-container')">Bio</a>
           <a onclick="openAbout('skills-container')">Skills</a>
-          <a onclick="openAbout('employment-container')"">Employment History</a>
+          <a onclick="openAbout('employment-container')">Employment History</a>
         </nav>
         <section>
           <h4>Bio</h4>
@@ -97,7 +118,9 @@
         <nav id="container-nav">
           <a onclick="openAbout('bio-container')">Bio</a>
           <a onclick="openAbout('skills-container')">Skills</a>
-          <a class="active" onclick="openAbout('employment-container')"">Employment History</a>
+          <a class="active" onclick="openAbout('employment-container')"
+            >Employment History</a
+          >
         </nav>
         <section>
           <h4>Employment History</h4>
@@ -183,7 +206,7 @@
         <nav id="container-nav">
           <a onclick="openAbout('bio-container')">Bio</a>
           <a class="active" onclick="openAbout('skills-container')">Skills</a>
-          <a onclick="openAbout('employment-container')"">Employment History</a>
+          <a onclick="openAbout('employment-container')">Employment History</a>
         </nav>
         <section>
           <h4>Skills</h4>
@@ -192,18 +215,13 @@
             software engineering:
           </p>
           <table>
-            <!-- i tag chosen for italics over em because i tag implies that instance text is 
-                'set off from normal prose' on the page -->
             <caption>
               Proficiency List
             </caption>
             <colgroup>
-              <!-- When we are allowed to style, the following col tags will be used to give
-                the columns in the table below identifiable borders, light colors, and fixed width -->
               <col class="kind" span="2" />
               <col class="description" />
             </colgroup>
-            <!-- Will increase space between columns when styling allowed -->
             <tr>
               <th>Skill</th>
               <th>Years of Experience</th>
