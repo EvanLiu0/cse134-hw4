@@ -18,6 +18,10 @@ export function showAddDialog(args) {
   el.setAttribute("autofocus", "");
   el.setAttribute("style", "text-align: center;");
 
+  let vines1 = document.createElement("img");
+  vines1.setAttribute("src", "../assets/images/vines.png");
+  el.appendChild(vines1);
+
   let dialogHead = document.createElement("h2");
   dialogHead.innerText = "Add Post";
   el.appendChild(dialogHead);
@@ -80,6 +84,13 @@ export function showAddDialog(args) {
   };
   el.appendChild(accept);
 
+  el.appendChild(document.createElement("br"));
+  el.appendChild(document.createElement("br"));
+
+  let vines2 = document.createElement("img");
+  vines2.setAttribute("src", "../assets/images/vines.png");
+  el.appendChild(vines2);
+
   document.body.appendChild(el);
 
   el.showModal();
@@ -90,11 +101,14 @@ export function showDeleteDialog(args) {
   el.setAttribute("autofocus", "");
   el.setAttribute("style", "text-align: center;");
 
+  let vines1 = document.createElement("img");
+  vines1.setAttribute("src", "../assets/images/vines.png");
+  el.appendChild(vines1);
+
   let dialogHead = document.createElement("h2");
   dialogHead.innerText = "Delete Post";
   el.appendChild(dialogHead);
 
-  el.appendChild(document.createElement("br"));
   el.appendChild(document.createElement("br"));
 
   let cancel = document.createElement("button");
@@ -120,6 +134,14 @@ export function showDeleteDialog(args) {
   };
 
   el.appendChild(accept);
+
+  el.appendChild(document.createElement("br"));
+  el.appendChild(document.createElement("br"));
+
+  let vines2 = document.createElement("img");
+  vines2.setAttribute("src", "../assets/images/vines.png");
+  el.appendChild(vines2);
+
   document.body.appendChild(el);
   el.showModal();
 }
@@ -128,6 +150,10 @@ export function showEditDialog(args) {
   let el = document.createElement("dialog");
   el.setAttribute("autofocus", "");
   el.setAttribute("style", "text-align: center;");
+
+  let vines1 = document.createElement("img");
+  vines1.setAttribute("src", "../assets/images/vines.png");
+  el.appendChild(vines1);
 
   let dialogHead = document.createElement("h2");
   dialogHead.innerText = "Edit Post";
@@ -168,10 +194,6 @@ export function showEditDialog(args) {
 
   let tempLI = createLIFromString(args);
 
-  //   alert(styleddb[0]);
-  //   alert(args);
-  //   alert(dbFind(args));
-
   titleInput.value = tempLI.childNodes[0].innerHTML;
   dateInput.value = tempLI.childNodes[2].innerHTML.substring(
     1,
@@ -204,6 +226,13 @@ export function showEditDialog(args) {
     notifyDBChanged();
   };
   el.appendChild(accept);
+
+  el.appendChild(document.createElement("br"));
+  el.appendChild(document.createElement("br"));
+
+  let vines2 = document.createElement("img");
+  vines2.setAttribute("src", "../assets/images/vines.png");
+  el.appendChild(vines2);
 
   document.body.appendChild(el);
 
