@@ -1,4 +1,3 @@
-import "./node_modules/dompurify/dist/purify.js";
 import {
   showDeleteDialog,
   showEditDialog,
