@@ -157,6 +157,7 @@ body {
 
 main {
   padding: 2rem 2rem 2rem 2rem;
+  animation: fade-in 0.75s;
 }
 
 footer {
@@ -244,18 +245,18 @@ form {
 }
 
 main div {
-  animation: fade-in 0.75s;
   background-color: #11213e;
   max-width: 130ch;
+  height: 90vh;
 }
 
-#about-container {
+.about-container {
   display: flex;
   flex-direction: row;
   min-width: 330px;
 }
 
-#about-container p {
+.about-container p {
   color: var(--container-text-color);
 }
 
@@ -339,4 +340,16 @@ p + hr {
 picture img {
   width: 200px;
   height: 200px;
+}
+
+#skills-container {
+  display: none;
+}
+
+#employment-container {
+  display: none;
+}
+
+nav + section {
+  overflow: scroll;
 }

@@ -25,17 +25,6 @@
   }
 }
 
-/* nav picture {
-    visibility: hidden;
-    border: 1px solid red;
-  }
-  
-  nav > * + * {
-    visibility: visible;
-    border: 1px solid orange;
-    padding: 0.3rem;
-  } */
-
 /** Nav Stuff **/
 .nav-container {
   background: #11213e;

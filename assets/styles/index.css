@@ -220,3 +220,8 @@ main a:hover {
 .active {
   color: var(--secondary-text-color) !important;
 }
+
+section a,
+section a:visited {
+  color: var(--secondary-text-color);
+}

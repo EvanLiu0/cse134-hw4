@@ -29,6 +29,16 @@
     </style>
   </head>
   <body>
+    <script>
+      function openAbout(aboutName) {
+        var i;
+        var x = document.getElementsByClassName("about-container");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(aboutName).style.display = "flex";
+      }
+    </script>
     <header class="nav-container">
       <h1 class="title">
         <a href="./index.html">Evan Liu's Portfolio</a>
@@ -45,11 +55,11 @@
     </header>
     <main>
       <h2>About Me</h2>
-      <div id="about-container">
+      <div class="about-container" id="bio-container">
         <nav id="container-nav">
-          <a class="active" href="./about.html">Bio</a>
-          <a href="./skills.html">Skills</a>
-          <a href="./employment.html">Employment History</a>
+          <a class="active" onclick="openAbout('bio-container')">Bio</a>
+          <a onclick="openAbout('skills-container')">Skills</a>
+          <a onclick="openAbout('employment-container')"">Employment History</a>
         </nav>
         <section>
           <h4>Bio</h4>
@@ -81,6 +91,169 @@
             centered design and programming to make the world a
             <em>better place</em>.
           </p>
+        </section>
+      </div>
+      <div class="about-container" id="employment-container">
+        <nav id="container-nav">
+          <a onclick="openAbout('bio-container')">Bio</a>
+          <a onclick="openAbout('skills-container')">Skills</a>
+          <a class="active" onclick="openAbout('employment-container')"">Employment History</a>
+        </nav>
+        <section>
+          <h4>Employment History</h4>
+          <p>
+            Click on one of the following menus to learn more about my past work
+            experiences!
+          </p>
+          <hr />
+          <details>
+            <summary><strong>Capital One</strong></summary>
+            <p><em>Duration:</em> June 2023 - August 2023</p>
+            <p><em>Location:</em> McLean, VA</p>
+            <p><em>Position:</em> Software Engineering Intern</p>
+            <p><em>Work Description:</em> Pending</p>
+          </details>
+          <br />
+          <details>
+            <summary><strong>Neon Law Foundation</strong></summary>
+            <p><em>Duration:</em> June 2022 - Present</p>
+            <p><em>Location:</em> Las Vegas, NV</p>
+            <p><em>Position:</em> Software Engineering Intern</p>
+            <p><em>Work Description:</em></p>
+            <ul>
+              <li>
+                Developed an open-source web-based data scraping application
+                using Python BeautifulSoup library
+              </li>
+              <li>
+                Automated company's email and retail workflows using the Zapier
+                and Front software platforms
+              </li>
+              <li>
+                Hosted seminar at University of California, San Diego on the
+                topic of web scraping
+              </li>
+            </ul>
+          </details>
+          <br />
+          <details>
+            <summary>
+              <strong>St. James Episcopal Church Food Locker</strong>
+            </summary>
+            <p><em>Duration:</em> June 2019 - October 2019</p>
+            <p><em>Location:</em> South Pasadena, CA</p>
+            <p><em>Position:</em> Intern</p>
+            <p><em>Work Description:</em></p>
+            <ul>
+              <li>
+                Created 2 spreadsheets to track food inventory of the church's
+                food pantry for the year of 2019
+              </li>
+              <li>
+                Proposed and implemented new weekly food distribution quotas in
+                response to past distribution and visitation metrics
+              </li>
+              <li>
+                Coordinated and participated in the church's weekly food
+                distributions serving 30 families weekly
+              </li>
+            </ul>
+          </details>
+          <br />
+          <details>
+            <summary><strong>USC Keck School of Medicine</strong></summary>
+            <p><em>Duration:</em> June 2018 - August 2018</p>
+            <p><em>Location:</em> Los Angeles, CA</p>
+            <p><em>Position:</em> Intern</p>
+            <p><em>Work Description:</em></p>
+            <ul>
+              <li>
+                Constructed spreadsheets to store academic and
+                graduation-related information of over 24000 USC alumni
+              </li>
+              <li>
+                Digitized and updated university's physical alumni information
+                records spanning from 1970 to 2018 using Excel
+              </li>
+            </ul>
+          </details>
+        </section>
+      </div>
+      <div class="about-container" id="skills-container">
+        <nav id="container-nav">
+          <a onclick="openAbout('bio-container')">Bio</a>
+          <a class="active" onclick="openAbout('skills-container')">Skills</a>
+          <a onclick="openAbout('employment-container')"">Employment History</a>
+        </nav>
+        <section>
+          <h4>Skills</h4>
+          <p>
+            Here are some of the technical skills I've amassed in my study of
+            software engineering:
+          </p>
+          <table>
+            <!-- i tag chosen for italics over em because i tag implies that instance text is 
+                'set off from normal prose' on the page -->
+            <caption>
+              Proficiency List
+            </caption>
+            <colgroup>
+              <!-- When we are allowed to style, the following col tags will be used to give
+                the columns in the table below identifiable borders, light colors, and fixed width -->
+              <col class="kind" span="2" />
+              <col class="description" />
+            </colgroup>
+            <!-- Will increase space between columns when styling allowed -->
+            <tr>
+              <th>Skill</th>
+              <th>Years of Experience</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Java</td>
+              <td>8</td>
+              <td>
+                Proficiency With Object-Oriented Design, Polymorphism,
+                Inheritance
+              </td>
+            </tr>
+            <tr>
+              <td>C++</td>
+              <td>3</td>
+              <td>Proficiency Using Pointers in Combination With Classes</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>3</td>
+              <td>
+                Proficiency Using Pointers in Combination With Memory Management
+              </td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>3</td>
+              <td>
+                Used to Develop Complex Web-Based Applications in Professional
+                Context
+              </td>
+            </tr>
+            <tr>
+              <td>Figma</td>
+              <td>3</td>
+              <td>
+                Proficiency in Developing User Interfaces and Website
+                Prototyping
+              </td>
+            </tr>
+            <tr>
+              <td>Android Studio</td>
+              <td>3</td>
+              <td>
+                Proficiency in Developing Complex Mobile Applications Relying on
+                Third Party Navigation APIs
+              </td>
+            </tr>
+          </table>
         </section>
       </div>
     </main>
